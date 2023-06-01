@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp6;
+package jp.te4a.spring.boot.myapp8;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentMap;
