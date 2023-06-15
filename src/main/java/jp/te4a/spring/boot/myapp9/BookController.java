@@ -30,7 +30,7 @@ public class BookController {
 	@PostMapping(path="edit",params="form")
 	String editForm(@RequestParam Integer id,BookForm form) {
 		BookForm bookform = bookService.findOne(id);
-		BeanUtils.copyProperties(bookform, form);		
+		BeanUtils.copyProperties(bookform, form);
 		return "books/edit";
 	}
 	
@@ -41,8 +41,8 @@ public class BookController {
 	}
 	
 	@PostMapping(path="delete")
-	String delete(@RequestParam BookBean bookBean) {
-		bookService.delete(bookBean);
+	String delete(@RequestParam Integer id) {
+		bookService.delete(id);
 		return "redirect:/books";
 	}
 	
