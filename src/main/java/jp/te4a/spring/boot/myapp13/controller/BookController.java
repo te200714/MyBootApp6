@@ -42,12 +42,11 @@ public class BookController {
 		BookForm bookform = bookService.findOne(id);
 		BeanUtils.copyProperties(bookform, form);
 		return "books/edit";
-	}
-	
+	}	
 	@PostMapping(path="edit")
 	String edit(@RequestParam Integer id,@Validated BookForm form,BindingResult result) {
-		if(result.hasErrors()) {
-			return editForm(id,form);
+		if(result.hasErrors()) {			
+			return "books/edit";
 		}
 		bookService.update(form);
 		return "redirect:/books";
